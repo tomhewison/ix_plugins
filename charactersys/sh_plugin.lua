@@ -115,10 +115,10 @@ else
 				end
 			end
 
-			if (ix.currency.Get(price)) then
-				char:TakeMoney(price)
+			if client:GetCharacter():HasMoney(price) then
+				client:GetCharacter():TakeMoney(price)
 			else
-				client:notifyLocalized("cantAfford")
+				client:NotifyLocalized("canNotAfford")
 
 				return 
 			end
